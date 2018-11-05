@@ -1,0 +1,13 @@
+# ignore all files starting with .
+.*
+
+# ignore node dependency directories
+node_modules/
+
+# ignore sass dir
+sass/
+
+# track these files, if they exist
+!.gitignore
+!README.md
+!CHANGELOG.md
