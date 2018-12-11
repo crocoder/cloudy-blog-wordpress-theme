@@ -6,6 +6,7 @@ node_modules/
 
 # ignore sass dir
 sass/
+style.css.map
 
 # track these files, if they exist
 !.gitignore

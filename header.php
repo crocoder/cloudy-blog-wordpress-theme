@@ -23,10 +23,19 @@
       <header class="site-header">
 
         <div class="site-custom-header">
+          <div class="site-custom-header-media"><?php the_custom_header_markup(); ?></div>
           <div class="site-branding">
-            <a href="/" rel="home" class="custom-logo-link"><img src="<?php echo get_template_directory_uri(). '/includes/img/cloudy-blog.png'; ?>" width="67" height="50" alt="Cloudy Blog"></a>
-            <h1 class="site-title"><a href="/" rel="home">Cloudy</a></h1>
-            <p class="site-description">Short site description</p>
+            <?php the_custom_logo(); ?>
+            <?php if ( is_front_page() && is_home() ) : ?>
+              <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <?php else : ?>
+              <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+            <?php endif;
+            $cloudyblog_description = get_bloginfo( 'description', 'display' );
+            if ( $cloudyblog_description ) :
+            ?>
+            <p class="site-description"><?php echo $cloudyblog_description; ?></p>
+            <?php endif; ?>
           </div>
         </div>
           
