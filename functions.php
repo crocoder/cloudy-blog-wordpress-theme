@@ -31,10 +31,16 @@ function cloudyblog_setup(){
       'description'   => 'Rain',
     ),
     'face' => array(
-			'url'           => '%s/includes/img/default-header-face.jpg',
+		  'url'           => '%s/includes/img/default-header-face.jpg',
       'thumbnail_url' => '%s/includes/img/default-header-face.jpg',
       'description'   => 'Face',
 		),
+  ) );
+
+  // Register nav menu
+  register_nav_menus( array(
+    'main-menu' => 'Primary',
+    'footer-menu' => 'Secondary'
   ) );
   
 }
